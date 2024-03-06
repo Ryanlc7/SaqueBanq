@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bradesco</title>
+</head>
+<body>
+    <form>
+        <p> Saldo: <input type="number" id="saldo" readonly placeholder="10000"> </p>
+        <p> Saque: <input type="number" id="saque"> </p>
+           <button type="button" onclick="obterDados()"> Sacar </button>
+    </form>
+    <script>
+         function obterDados() {
+            let saldo = document.getElementById("saldo").value;
+            document.getElementById("saldo").value = 10000
+            let saque = document.getElementById("saque").value;
+            let result = 10000 - saque;
+            if(result > 0){
+                alert("Saque Concluído");
+                document.getElementById("saldo").value = 10000 - saque;
+             }else{
+                alert("Saque Inválido")
+            }   
+
+        }
+    </script>
+</body>
+</html>
